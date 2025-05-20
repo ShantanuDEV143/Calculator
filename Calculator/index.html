@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scientific Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="calculator">
+  <div class="display" id="display">0</div>
+
+  <div class="buttons">
+    <!-- Row 1 -->
+    <button onclick="clearDisplay()">C</button>
+    <button onclick="backspace()">←</button>
+    <button onclick="appendOperator('**')">^</button>
+    <button onclick="appendOperator('%')">%</button>
+    <button onclick="appendOperator('/')">÷</button>
+    
+    <!-- Row 2 -->
+    <button onclick="appendOperator('7')">7</button>
+    <button onclick="appendOperator('8')">8</button>
+    <button onclick="appendOperator('9')">9</button>
+    <button onclick="appendOperator('*')">×</button>
+    <button onclick="appendFunction('sqrt')">√</button>
+
+    <!-- Row 3 -->
+    <button onclick="appendOperator('4')">4</button>
+    <button onclick="appendOperator('5')">5</button>
+    <button onclick="appendOperator('6')">6</button>
+    <button onclick="appendOperator('-')">−</button>
+    <button onclick="appendFunction('log')">log</button>
+
+    <!-- Row 4 -->
+    <button onclick="appendOperator('1')">1</button>
+    <button onclick="appendOperator('2')">2</button>
+    <button onclick="appendOperator('3')">3</button>
+    <button onclick="appendOperator('+')">+</button>
+    <button onclick="appendFunction('sin')">sin</button>
+
+    <!-- Row 5 -->
+    <button onclick="appendOperator('0')">0</button>
+    <button onclick="appendOperator('.')">.</button>
+    <button onclick="calculate()">=</button>
+    <button onclick="appendFunction('cos')">cos</button>
+    <button onclick="appendOperator('(')">(</button>
+    <button onclick="appendOperator(')')">)</button>
+
+    <!-- Constants -->
+    <button onclick="appendConstant('Math.PI')">π</button>
+    <button onclick="appendConstant('Math.E')">e</button>
+  </div>
+
+  <div class="history">
+    <h4>History</h4>
+    <div id="history" style="max-height: 100px; overflow-y: auto;"></div>
+  </div>
+
+  <div class="converter">
+    <h4>Converter</h4>
+    <input type="number" id="convertInput" placeholder="Enter value">
+    <select id="convertFrom">
+      <option value="celsius">Celsius</option>
+      <option value="fahrenheit">Fahrenheit</option>
+      <option value="meters">Meters</option>
+      <option value="feet">Feet</option>
+      <option value="kilograms">Kilograms</option>
+      <option value="pounds">Pounds</option>
+    </select>
+    <select id="convertTo">
+      <option value="fahrenheit">Fahrenheit</option>
+      <option value="celsius">Celsius</option>
+      <option value="feet">Feet</option>
+      <option value="meters">Meters</option>
+      <option value="pounds">Pounds</option>
+      <option value="kilograms">Kilograms</option>
+    </select>
+    <button onclick="convert()">Convert</button>
+    <div id="convertResult" style="margin-top: 10px;"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
